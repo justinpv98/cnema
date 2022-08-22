@@ -1,0 +1,50 @@
+@use "../../styles/mixins" as *;
+
+.contentWrapper {
+  padding: 4rem 2rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0rem;
+
+
+  @include mq(large) {
+    margin: 0;
+  }
+
+  & h2 {
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: var(--fs-600);
+
+    margin: 1rem 0 auto 0;
+
+    @include mq(medium) {
+      padding: 1rem 1rem .25rem 0;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 76.5rem;
+    }
+
+    @include mq(large){
+      padding-left: 1rem;
+    }
+
+
+
+  }
+
+}
+
+.loadMoreButton {
+  margin: 1.5rem auto 0 auto;
+  width: 100%;
+
+  @include mq(large) {
+    width: auto;
+  }
+}

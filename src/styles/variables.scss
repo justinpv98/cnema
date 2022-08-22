@@ -1,0 +1,50 @@
+// Colors
+$color-accent: #fab300;
+$color-background: #131317;
+$color-neutral-200: #24242B;
+$color-neutral-300: #393941;
+$color-neutral-400: #555562;
+$color-neutral-500: #727283;
+$color-neutral-800: #E9E9ED;
+$color-text: #FFF;
+$color-text-light: #DDD;
+$color-text-dark: #131317;
+$color-black: #000;
+$color-white: #FFF;
+
+// Typography
+$fs-50: .5rem;
+$fs-100: .64rem;
+$fs-200: .8rem;
+$fs-300: .875rem;
+$fs-400: 1rem;
+$fs-450: 1.125rem;
+$fs-500: 1.25rem;
+$fs-600: 1.563rem;
+$fs-650: 1.953rem;
+$fs-700: 2.441rem;
+$fs-800: 3.052rem;
+$fs-900: 3.815rem;
+
+// Breakpoints
+$bp-medium: 48em;
+$bp-large: 64em;
+$bp-xl: 87.5em;
+
+// Z-index
+$z-index: (
+    navigation-pseudo: 501,
+    navigation: 500,
+    header: 400,
+    navigation-overlay: 300,
+    tooltip: 200,
+    search: 100,
+    card-overlay: 50,
+    base: 0,
+    underlay: -100,
+    underlay-image: -200,
+);
+
+
+// Misc
+$drawer-width: 16em;

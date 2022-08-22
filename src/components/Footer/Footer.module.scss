@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  
+  font-size: var(--fs-200);
+  text-align: center;
+}
+
+.tmdbLogo {
+  height: 16px;
+  margin-bottom: 0.5rem;
+}

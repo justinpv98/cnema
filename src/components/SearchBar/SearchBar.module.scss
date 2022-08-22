@@ -1,0 +1,106 @@
+@use "../../styles/mixins" as *;
+
+button.openSearchButton {
+  @include z-index(navigation);
+  position: absolute;
+  top: 8px;
+  right: 0;
+
+  margin-right: 0.375rem;
+
+  svg {
+    pointer-events: none;
+  }
+
+  @include mq(large) {
+    display: none;
+  }
+}
+
+.formWrapper {
+  @include z-index(underlay);
+  position: absolute;
+  left: 50%;
+  width: 100%;
+
+  transform: translate(-50%, 0);
+
+  &.open {
+    @include z-index(search);
+    top: 56px;
+  }
+
+  @include mq(large) {
+    @include z-index(search);
+    top: 1rem;
+    
+    max-width: clamp(50em, 72vw, 62.5em);
+  }
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  padding: 0.25rem 2rem;
+
+  background-color: var(--color-background-light);
+
+  &:focus-within {
+    outline: var(--color-accent) 2px solid;
+    border-radius: 4px;
+  }
+
+
+
+  @include mq(large) {
+    border-radius: 4px;
+    padding: 0.25rem 2rem;
+
+  }
+}
+
+.search {
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+
+  background-color: var(--color-background-light);
+  font-size: var(--fs-300);
+  color: var(--color-text);
+  outline: 0px transparent;
+
+  &::placeholder {
+    color: var(--color-text);
+    opacity: 0.8;
+  }
+
+}
+
+button.searchButton {
+  display: none;
+  position: absolute;
+  top: 4px;
+  left: -4px;
+
+  @include mq(large) {
+    display: block;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  left: -9999999px;
+}
+
+.overlay {
+  @include z-index(card-overlay);
+  position: absolute;
+  top: 56px;
+
+  height: calc(100vh - 56px);
+  width: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.21);
+  cursor: pointer;
+}

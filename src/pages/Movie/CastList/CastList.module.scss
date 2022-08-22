@@ -1,0 +1,11 @@
+@use "../../../styles/mixins" as *;
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+
+  @include mq(large) {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,78 @@
+@use "../../styles/mixins" as *;
+
+.contentWrapper {
+  padding: 4rem 2rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0rem;
+
+
+  @include mq(large) {
+    margin: 0 0;
+  }
+
+  & h2 {
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: var(--fs-600);
+
+    margin: 1rem 0 auto 0;
+
+    @include mq(medium) {
+      padding: 1rem 1rem .25rem 0;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 76.5rem;
+    }
+
+    @include mq(large){
+      padding-left: 1rem;
+    }
+  }
+    
+    & ul {
+
+    @include mq(extra-large){
+
+      width: 75.5rem;
+    }
+
+    }
+
+}
+
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  .linkButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em 1.5em;
+  margin-top: 1rem;
+
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-accent);
+
+  font-family: inherit;
+  font-size: var(--fs-300);
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+  }
+}

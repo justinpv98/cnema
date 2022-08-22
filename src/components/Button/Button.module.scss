@@ -1,0 +1,51 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em 1.5em;
+
+  background-color: none;
+  color: currentColor;
+
+  font-family: inherit;
+  font-size: var(--fs-400);
+  font-weight: 600;
+  letter-spacing: -.25px;
+  user-select: none;
+  cursor: pointer;
+
+  & > svg + span {
+    margin-left: 0.5em;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.primary {
+  @extend .button;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  border: 1px solid var(--color-accent);
+}
+
+.secondary {
+  @extend .button;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.secondaryOutline {
+  @extend .secondary;
+  background: none;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.iconOnly {
+    @extend .button;
+    background: none;
+}

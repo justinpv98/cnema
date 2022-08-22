@@ -1,0 +1,111 @@
+@use "../../styles/mixins" as *;
+
+.drawer {
+  @include z-index(navigation);
+  position: fixed;
+  inset: 0 auto 0 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: var(--drawer-width);
+  min-height: 100vh;
+
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+  overflow: hidden;
+
+  &:hover {
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+
+  .skipLink {
+    position: absolute;
+    left: -3000px;
+
+    padding: 0.5em 1.5em;
+
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    font-weight: 600;
+
+    &:focus {
+      left: 0px;
+    }
+  }
+
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logoWrapper {
+      padding: 1rem 2.125rem;
+
+      svg {
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .body {
+    .sectionTitle {
+      margin: 0 1rem;
+      padding: 1rem 0 0.5rem 1.125rem;
+      border-bottom: 1px solid var(--color-neutral-300);
+
+      font-size: var(--fs-300);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Link styling */
+.navLink {
+  display: flex;
+  align-items: center;
+
+  padding: 0 2.25rem;
+
+  min-height: 40px;
+  font-size: var(--fs-300);
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-neutral-300);
+    outline: none;
+  }
+
+  &.active {
+    position: relative;
+    font-weight: 600;
+    color: var(--color-white);
+
+    svg {
+      stroke-width: 2px;
+    }
+
+    @include pseudo(before) {
+      inset: 0;
+      background-color: var(--color-white);
+      opacity: 0.15;
+    }
+
+    @include pseudo(after) {
+      @include z-index(navigation-pseudo);
+      left: 0;
+
+      height: 100%;
+      width: 4px;
+      background-color: var(--color-accent);
+    }
+  }
+
+  span {
+    margin-left: 1.5rem;
+  }
+}

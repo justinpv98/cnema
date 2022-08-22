@@ -1,0 +1,68 @@
+@use "../../../styles/mixins" as *;
+
+.container {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--color-neutral-300);
+
+  @include mq(medium) {
+    height: 80px;
+    width: 80px;
+  }
+
+  & > div:first-child,
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .tooltip {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 3px;
+
+    span:first-of-type {
+      font-weight: 700;
+    }
+  }
+
+  &:focus {
+    appearance: none;
+  }
+
+  &:focus > img {
+    border: 2px solid var(--color-white);
+    transform: scale(1.1);
+  }
+
+  &:hover > .tooltip,
+  &:focus > .tooltip {
+    position: relative;
+    left: -22px;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    padding: 0.5rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    @include pseudo(before) {
+      @include triangle($direction: "up", $color: var(--color-white)) {
+        position: absolute;
+        z-index: 5;
+        top: -4px;
+        left: 50%;
+        width: 1px;
+        height: 1px;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

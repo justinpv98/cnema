@@ -1,0 +1,27 @@
+@use "../../styles/mixins" as *;
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.75rem, 10.05rem));
+  place-content: space-between space-evenly;
+  align-items: start;
+  gap: 2rem 1rem;
+  padding: 2rem 0;
+
+  @include mq(medium) {
+    grid-template-columns: repeat(auto-fit, minmax(5.75rem, 14.5rem));
+    gap: 3rem 1rem;
+    justify-content: space-around;
+  }
+
+  @include mq(large) {
+    grid-template-columns: repeat(auto-fit, minmax(5.75rem, 14.5rem));
+    gap: 2rem 1rem;
+    margin: 0;
+    max-width: 1400px;
+  }
+
+  @include mq(extra-large){
+    margin: auto;
+  }
+}

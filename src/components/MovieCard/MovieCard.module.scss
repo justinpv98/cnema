@@ -1,0 +1,96 @@
+@use "../../styles/mixins" as *;
+
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  width: 160px;
+  height: 245px;
+
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 300ms ease-in-out;
+
+  font-size: var(--fs-300);
+  box-shadow:  rgba(0, 0, 0, 0.9) 0px 0px 0.25em, rgba(0, 0, 10, 0.6) 0px 0.25em 1em; 
+
+  &:hover,
+  &:focus-within {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px 0px, rgba(0, 0, 0, 0.8) 0px 2px 16px 0px;
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-accent)
+  }
+
+  @include mq(medium) {
+    width: 232px;
+    height: 353px;
+  }
+
+  @include mq(reduced-motion);
+}
+
+.underlay {
+  @include z-index(underlay);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @include pseudo(before) {
+    width: 100%;
+    height: 100%;
+    background:  linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.006) 15.2%,
+      hsla(0, 0%, 0%, 0.023) 27.9%,
+      hsla(0, 0%, 0%, 0.051) 38.4%,
+      hsla(0, 0%, 0%, 0.088) 47%,
+      hsla(0, 0%, 0%, 0.135) 53.9%,
+      hsla(0, 0%, 0%, 0.19) 59.5%,
+      hsla(0, 0%, 0%, 0.253) 64.1%,
+      hsla(0, 0%, 0%, 0.322) 68%,
+      hsla(0, 0%, 0%, 0.398) 71.4%,
+      hsla(0, 0%, 0%, 0.479) 74.7%,
+      hsla(0, 0%, 0%, 0.565) 78.2%,
+      hsla(0, 0%, 0%, 0.655) 82.2%,
+      hsla(0, 0%, 0%, 0.747) 87%,
+      hsla(0, 0%, 0%, 0.843) 92.8%,
+      hsla(0, 0%, 0%, 0.94) 100%
+    );
+  }
+}
+
+
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-neutral-300);
+}
+
+.contentWrapper {
+  @include z-index(base);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  
+  width: 100%;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.title {
+  @include truncate-text(2);
+  font-weight: 700;
+  font-size: var(--fs-450);
+}
