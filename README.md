@@ -2,7 +2,7 @@
 
 <img src="./images/banner.svg" width="100%" />
 
-<h2 align="center"><a href="#">Click for Live Demo</a></h2>
+<h2 align="center"><a href="https://justinpv98.github.io/cnema/" target="_blank">Click for Live Demo</a></h2>
 
 **cnema** is a React web application that uses The Movie Database (TMDB) API to allow casual movie watchers and hobbyists to find information about the movies they enjoy and save them to their watchlist for later.
 
