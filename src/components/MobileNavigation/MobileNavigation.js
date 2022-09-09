@@ -25,6 +25,7 @@ function MobileNav() {
         className={({ isActive }) =>
           isActive ? cx(styles.navLink, styles.active) : styles.navLink
         }
+        onClick={() => setIsOpen(!isOpen)}
         to={route.route}
       >
         <Icon icon={route.icon} />
@@ -42,6 +43,7 @@ function MobileNav() {
         className={({ isActive }) =>
           isActive ? cx(styles.navLink, styles.active) : styles.navLink
         }
+        onClick={() => setIsOpen(!isOpen)}
         to={`/genre/${formatStringToPath(genre.name)}`}
       >
         <Icon icon="movie" />
